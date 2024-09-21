@@ -1,0 +1,20 @@
+# *****************************************
+# Lab Activity 1: Exercise 3              *
+# Programmed by: FATIMA LENIN F. PALMON   *
+# Course and Section: BSCpE 2-3           *
+# Instructor: ENGR. GODOFREDO T. AVENA    *
+# Date Submitted: September 21, 2024      *
+# *****************************************
+
+def print_diamond(n):
+    if n % 2 == 0:
+        return "Please privide an odd integer."
+    for i in range(n // 2 + 1):
+        print(' ' * (n // 2 - i) + '*' * (2 * i + 1))
+    for i in range(n // 2 - 1, -1, -1):
+        print(' ' * (n // 2 - i) + '*' * (2 * i + 1))
+
+n = 5
+result = print_diamond(n)
+if result:
+    print(result)
