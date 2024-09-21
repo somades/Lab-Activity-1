@@ -1,0 +1,48 @@
+# *****************************************
+# Lab Activity 1: Exercise 2              *
+# Programmed by: FATIMA LENIN F. PALMON   *
+# Course and Section: BSCpE 1-3           *
+# Instructor: ENGR. GODOFREDO T. AVENA    *
+# Date Submitted: September 21, 2024      *
+# *****************************************
+
+def calculate_voltage(current, resistance):
+    return current * resistance
+
+def calculate_current(voltage, resistance):
+    if resistance == 0:
+        return "Division by zero detected. The current value must not be zero."
+    return voltage/resistance
+
+def calculate_resistance(voltage, current):
+    if current == 0:
+        return "Division by zero detected. The resistance value must not be zero."
+    return voltage/current
+
+prompt_user = input("Please select the quantity you would like to calculate: (1. Voltage, 2. Current, 3. Resistance)")
+
+if prompt_user == '1':
+    current = float(input("Enter current (I in Amperes): "))
+    resistance = float(input("Enter resistance (R in Ohms): "))
+    voltage = calculate_voltage(current, resistance)
+    print(f"Voltage (V) is {voltage:.2f} volts")
+
+elif prompt_user == '2':
+    voltage = float(input("Enter voltage (V in volts): "))
+    resistance = float(input("Enter resistance (R in Ohms): "))
+    current = calculate_current(voltage,resistance)
+    if isinstance(current, str):
+        print(current)
+    else:
+        print(f"Current (I) is {current:.2f} Amperes")
+
+elif prompt_user == '3':
+    voltage = float(input("Enter voltage(V in Volts): "))
+    current = float(input("Enter current (I in Amperes)"))
+    resistance = calculate_resistance(voltage, current)
+    if isinstance(resistance, str):
+        print(resistance)
+    else:
+        print(f"Resistance (R) is {resistance:.2f} Ohms")
+else:
+    print("Invalid selection. Kindly choose only from options 1, 2, or 3.")
